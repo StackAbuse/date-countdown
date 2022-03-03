@@ -5,15 +5,17 @@ let secondField = document.getElementById('second');
 
 let interval;
 
-const eventDay = new Date('03/03/2022');
-
-// convert to milisecond
+// Convert to milisecond
 const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 
-// implement countdown logic
+var eventDay = new Date();
+// Setting event dat a week from current date for the demo to work in perpetuity
+eventDay = new Date(eventDay.getTime() + 7 * day);
+
+// Implement countdown logic
 const countDownFn = () => {
   const today = new Date();
   const timeSpan = eventDay - today;
